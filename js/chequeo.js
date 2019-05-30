@@ -191,7 +191,13 @@ function comparacionEspecifica(){
     var opcion = indexOfMax(arrarMilagro);
     var max = Math.max(...arrarMilagro);
     if(max<=3.4){
-        alert("No padeces de alguna enfermedad seleccionada");
+        swal({
+          title: "Bien!",
+          text: "No padeces ninguna enfermedad seleccionada!",
+          icon: "success",
+          button: "Cerrar!",
+
+        });
     }else if(max>=3.5){
         enfermedadProbable(opcion);
         
