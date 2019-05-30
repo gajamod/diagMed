@@ -1,1 +1,1 @@
-<h1>Manual de uso</h1>
+<h1>Manual de usuario</h1>
