@@ -18,7 +18,7 @@
   <body <?php echo $this->onBody; ?> >
     <?php  require_once(PATH_TEMPLATES.'headerPartial.php'); ?>
     <div class="row" style="height: 100%; min-height: 90%;">
-      <div class="col-md-1">
+      <div class="col-md-1 bg-success">
         <?php  require_once(PATH_TEMPLATES.'leftPartial.php'); ?>
       </div>
       <?php 
