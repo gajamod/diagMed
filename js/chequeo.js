@@ -83,12 +83,17 @@ function agregarOpcion(id){
 function compare(array1,array2){
     //const arr1= [5,5,6];
     //const arr2= [3,7,4];
+
+    console.log(typeof array1);
+    console.log(typeof array2);
+
     const arrayN=[];
-    for(i=0;i<=14;i++){
+    for (var i = array1.length - 1; i >= 0; i--) {
         a = array1[i];
         b = array2[i];
         arrayN[i] = Math.min(a,b);
     }
+
     //document.write(arrayN);
     //return arrayN;
     return arrayN.reduce(add,0);
@@ -169,8 +174,6 @@ function getSintomas()
       misSintomas.push(val);
       
     }
-    console.log("sintomas");
-    console.log(misSintomas);
     return misSintomas;
 }
 
@@ -180,8 +183,6 @@ function comparacionEspecifica(){
     //misResultados();
     selEnfer=getEnfermedadesSelected();
     for (var k in selEnfer) {
-        console.log("k: "+k);
-        console.log("se[k]: "+selEnfer[k]);
         indx=parseInt(selEnfer[k]);
         arrarMilagro[indx]=compare(misSintomas,matsintomas[indx]);
     }
@@ -203,7 +204,7 @@ function compararTodos(){
 
     misSintomas=getSintomas();
     var enfermedadScore=[];
-    for (var i = 0; i <= matsintomas.length - 1; i--) {
+    for (var i = 0; i <= matsintomas.length - 1; i++) {
         enfermedadScore[i] = compare(misSintomas,matsintomas[i]);
     }
     var opcion = indexOfMax(enfermedadScore);
@@ -218,6 +219,12 @@ function compararTodos(){
 
 
 function enfermedadProbable(enfermedad){
+    Swal.fire({
+      title: 'Error!',
+      text: 'Do you want to continue',
+      type: 'error',
+      confirmButtonText: 'Cool'
+    });
     alert("enfermedad: "+enfermedad);
     alert("Recordar que solo es una pagina de auto checo, favor de ir a una clinica especialicadad.");
     redirige("enfermedad");
