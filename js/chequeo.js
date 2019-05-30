@@ -236,9 +236,25 @@ function enfermedadProbable(enfermedad){
       title: "Resultados Encontrado",
       text: "A continuacion seras redirigido a la pagina que contiene informacion sobre el resultado encontrado.\n Recuerda que debes acudir a tu medico para confirmar el diagnostico",
       icon: "info",
-      button: "Ver Informacion",
+      //button: "Ver Informacion",
+      buttons: {
+        cancel: "NO quiero ver la info",
+        defeat: "Ver Informacion",
+      }
     })
-    .then(redirige("enfermedad/selected/"+enfermedad));
+    .then((value) => {
+      switch (value) {
+     
+        case "defeat":
+          redirige("enfermedad/selected/"+enfermedad);
+          break;
+     
+        default:
+          swal("Gracias por consultar con nosotros!");
+      }
+    })
+
+     
 
     
 }
