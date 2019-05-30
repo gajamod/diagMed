@@ -273,8 +273,8 @@ $sintomas[14]['opciones'][] = array(
                 <br><br>
         <div id="especi">
             <h5 class="casos">Enfermedad que se quiere comparar</h5>
-            <div id="dynamic_pago" class="form-inline container-fluid" >
-                <div class="form-group ">
+            <div id="dynamic_pago" class="form container-fluid row" >
+                <div class="form-group col-md-4">
                     <select class="form-control form-control-lg  vp" id="p1" name="enfer[1]" required="required">
                         <option value="">--Seleccione Enfermedad--</option>
                     </select>
@@ -300,8 +300,11 @@ $sintomas[14]['opciones'][] = array(
                 </div>
             <?php endforeach ?>
         </div>
-        <div class="oneMusic-buttons-area mb-100 align-items-center justify-content-center d-flex">
-            <button class="btn btn-success" onclick="holis();">Mostrar Resultados <i class="fa fa-angle-double-right"></i></button>
+        <div class="oneMusic-buttons-area mb-3 align-items-center justify-content-center d-flex">
+            <a class="float-left">Diagnostico: <strong id="tipd">Especifico</strong></a><br/>
+        </div>
+        <div class="oneMusic-buttons-area mb-5 align-items-center justify-content-center d-flex">
+            <button class="btn btn-success float-right" onclick="holis();">Mostrar Resultados <i class="fa fa-angle-double-right"></i></button>
         </div>
     </div>
 </div>
@@ -329,7 +332,7 @@ $(document).ready(function(){
     estat=0;
     $('#add').click(function(){
         i++;
-        $('#dynamic_pago').append('<div id="row'+i+'" class="form-group"><br/><div class="form-group "><select class="form-control form-control-lg  vp" id="p'+i+'" name="enfer['+i+']" required="required"><option value="">Enfermedad</option></select></div><div class="input-group col-md-4"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove col-md-4">X</button></div></div>');
+        $('#dynamic_pago').append('<div id="row'+i+'" class="form-group col-md-4 row"><div class="form-group col-9"><select class="form-control form-control-lg  vp" id="p'+i+'" name="enfer['+i+']" required="required"><option value="">-- Enfermedad --</option></select></div><div class="input-group col-md-3"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove ">X</button></div></div>');
         agregarOpcion('p'+i);
     });
 
@@ -339,10 +342,12 @@ $(document).ready(function(){
             estat=1;
             $( "#especi" ).addClass( "invisible d-none" );
             $(this).text("Cambiar a Consulta Especifica");
+            $("#tipd").text("Completo");
         } else {
             estat=0;
             $( "#especi" ).removeClass( "invisible  d-none" );
             $(this).text("Cambiar a Consulta General");
+            $("#tipd").text("Especifico");
         }
         
     });

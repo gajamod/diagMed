@@ -191,6 +191,7 @@ function comparacionEspecifica(){
     var opcion = indexOfMax(arrarMilagro);
     var max = Math.max(...arrarMilagro);
     if(max<=3.4){
+        alert("hola");
         swal({
           title: "Bien!",
           text: "No padeces ninguna enfermedad seleccionada!",
@@ -216,12 +217,13 @@ function compararTodos(){
     var opcion = indexOfMax(enfermedadScore);
     var max = Math.max(...enfermedadScore);
       if(max<=3.4){
-            swal({
-              title: "Good job!",
-              text: "You clicked the button!",
-              icon: "success",
-              button: "Aww yiss!",
-            });
+        swal({
+          title: "Bien!",
+          text: "No padeces ninguna enfermedad en nuestra Base de Datos!",
+          icon: "success",
+          button: "Cerrar!",
+
+        });
       }else if(max>=3.5){
         enfermedadProbable(opcion);
       }
@@ -231,14 +233,14 @@ function compararTodos(){
 
 function enfermedadProbable(enfermedad){
     swal({
-      title: "Good job!",
-      text: "You clicked the button!",
-      icon: "success",
-      button: "Aww yiss!",
-    });
-    alert("enfermedad: "+enfermedad);
-    alert("Recordar que solo es una pagina de auto checo, favor de ir a una clinica especialicadad.");
-    redirige("enfermedad");
+      title: "Resultados Encontrado",
+      text: "A continuacion seras redirigido a la pagina que contiene informacion sobre el resultado encontrado.\n Recuerda que debes acudir a tu medico para confirmar el diagnostico",
+      icon: "info",
+      button: "Ver Informacion",
+    })
+    .then(redirige("enfermedad/selected/"+enfermedad));
+
+    
 }
 function mostrarEnfermedad(enfermedad,sintomas,tratamiento){
 
