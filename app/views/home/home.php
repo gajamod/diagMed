@@ -10,7 +10,7 @@ $sintomas[0]['opciones'][] = array(
     ,'val' => 0.3);
 
 ////////////////////////////////////////////////////////
-$sintomas[1]['nombre']="Placas rojizas";
+$sintomas[1]['nombre']="Comezon";
 $sintomas[1]['opciones'][] = array(
     'text' => "Nada"
     ,'val' => 0);
@@ -18,7 +18,7 @@ $sintomas[1]['opciones'][] = array(
     'text' => "Poco"
     ,'val' => 0.3);
 ////////////////////////////////////////////////////////
-$sintomas[2]['nombre']="Descamacion";
+$sintomas[2]['nombre']="Color Amarillento";
 $sintomas[2]['opciones'][] = array(
     'text' => "Nada"
     ,'val' => 0);
@@ -26,7 +26,7 @@ $sintomas[2]['opciones'][] = array(
     'text' => "Poco"
     ,'val' => 0.3);
 ////////////////////////////////////////////////////////
-$sintomas[3]['nombre']="Picor";
+$sintomas[3]['nombre']="Descamacion";
 $sintomas[3]['opciones'][] = array(
     'text' => "Nada"
     ,'val' => 0);
@@ -34,7 +34,7 @@ $sintomas[3]['opciones'][] = array(
     'text' => "Poco"
     ,'val' => 0.3);
 ////////////////////////////////////////////////////////
-$sintomas[4]['nombre']="Erupciones";
+$sintomas[4]['nombre']="Depigmentacion";
 $sintomas[4]['opciones'][] = array(
     'text' => "Nada"
     ,'val' => 0);
@@ -42,7 +42,7 @@ $sintomas[4]['opciones'][] = array(
     'text' => "Poco"
     ,'val' => 0.3);
 ////////////////////////////////////////////////////////
-$sintomas[5]['nombre']="Lesiones Hipopigmentadas";
+$sintomas[5]['nombre']="Dolor Localizado";
 $sintomas[5]['opciones'][] = array(
     'text' => "Nada"
     ,'val' => 0);
@@ -50,14 +50,77 @@ $sintomas[5]['opciones'][] = array(
     'text' => "Poco"
     ,'val' => 0.3);
 ////////////////////////////////////////////////////////
-$sintomas[6]['nombre']="Mal olor";
+$sintomas[6]['nombre']="Enrojecimiento";
 $sintomas[6]['opciones'][] = array(
     'text' => "Nada"
     ,'val' => 0);
 $sintomas[6]['opciones'][] = array(
     'text' => "Poco"
     ,'val' => 0.3);
-
+////////////////////////////////////////////////////////
+$sintomas[7]['nombre']="Erupciones";
+$sintomas[7]['opciones'][] = array(
+    'text' => "Nada"
+    ,'val' => 0);
+$sintomas[7]['opciones'][] = array(
+    'text' => "Poco"
+    ,'val' => 0.3);
+////////////////////////////////////////////////////////
+$sintomas[8]['nombre']="Lesiones Con Costra";
+$sintomas[8]['opciones'][] = array(
+    'text' => "Nada"
+    ,'val' => 0);
+$sintomas[8]['opciones'][] = array(
+    'text' => "Poco"
+    ,'val' => 0.3);
+    ////////////////////////////////////////////////////////
+$sintomas[9]['nombre']="Lesiones Hipopigmentadas";
+$sintomas[9]['opciones'][] = array(
+    'text' => "Nada"
+    ,'val' => 0);
+$sintomas[9]['opciones'][] = array(
+    'text' => "Poco"
+    ,'val' => 0.3);
+////////////////////////////////////////////////////////
+$sintomas[10]['nombre']="Mal Olor";
+$sintomas[10]['opciones'][] = array(
+    'text' => "Nada"
+    ,'val' => 0);
+$sintomas[10]['opciones'][] = array(
+    'text' => "Poco"
+    ,'val' => 0.3);
+////////////////////////////////////////////////////////
+$sintomas[11]['nombre']="Picor";
+$sintomas[11]['opciones'][] = array(
+    'text' => "Nada"
+    ,'val' => 0);
+$sintomas[11]['opciones'][] = array(
+    'text' => "Poco"
+    ,'val' => 0.3);
+////////////////////////////////////////////////////////
+$sintomas[12]['nombre']="Placas Cremosas";
+$sintomas[12]['opciones'][] = array(
+    'text' => "Nada"
+    ,'val' => 0);
+$sintomas[12]['opciones'][] = array(
+    'text' => "Poco"
+    ,'val' => 0.3);
+////////////////////////////////////////////////////////
+$sintomas[13]['nombre']="Placas Rojizas";
+$sintomas[13]['opciones'][] = array(
+    'text' => "Nada"
+    ,'val' => 0);
+$sintomas[13]['opciones'][] = array(
+    'text' => "Poco"
+    ,'val' => 0.3);
+////////////////////////////////////////////////////////
+$sintomas[14]['nombre']="Ronchas";
+$sintomas[14]['opciones'][] = array(
+    'text' => "Nada"
+    ,'val' => 0);
+$sintomas[14]['opciones'][] = array(
+    'text' => "Poco"
+    ,'val' => 0.3);
 
 //print_r($sintomas);
  ?>
