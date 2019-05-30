@@ -130,7 +130,7 @@ $sintomas[14]['opciones'][] = array(
  <script src="js/chequeo.js"></script>
  <div class="container">
     <div class="input-group">
-        <button class="btn btn-info" id="cambiar">Comparacion Especifica</button>
+        <button class="btn btn-info" id="cambiar">Cambiar a Consulta General</button>
     </div>
         
  </div>
@@ -179,9 +179,11 @@ function cambiar(){
     if (estat==0) {
         estat=1;
         element.classList.add("hidden");
+        $(this).text("Cambiar a Consulta Especifica");
     } else {
         estat=0;
         element.classList.remove("hidden");
+
     }
     
     
@@ -190,6 +192,7 @@ function cambiar(){
 $(document).ready(function(){
     agregarOpcion('p1');
     var i=1;
+    estat=0;
     $('#add').click(function(){
         i++;
         $('#dynamic_pago').append('<div id="row'+i+'" class="form-group"><br/><div class="form-group "><select class="form-control form-control-lg  vp" id="p'+i+'" name="enfer['+i+']" required="required"><option value="">Enfermedad</option></select></div><div class="input-group col-md-4"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove col-md-4">X</button></div></div>');
@@ -197,13 +200,15 @@ $(document).ready(function(){
     });
 
     $('#cambiar').click(function(){
-        estat=0;
+  
         if (estat==0) {
             estat=1;
-            $( "#especi" ).addClass( "invisible" );
+            $( "#especi" ).addClass( "invisible d-none" );
+            $(this).text("Cambiar a Consulta Especifica");
         } else {
             estat=0;
-            $( "#especi" ).removeClass( "invisible" );
+            $( "#especi" ).removeClass( "invisible  d-none" );
+            $(this).text("Cambiar a Consulta General");
         }
         
     });

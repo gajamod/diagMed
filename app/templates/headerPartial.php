@@ -1,9 +1,5 @@
 <?php 
-$has_permiso=false;
-$has_sesion_valida=false;
-if ($has_sesion_valida=Session::valid_session()) {
-  $has_permiso=Session::tiene_permiso($_SESSION['id']);
-}
+
 
  ?>
 
