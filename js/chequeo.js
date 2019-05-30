@@ -185,6 +185,7 @@ function comparacionEspecifica(){
     for (var k in selEnfer) {
         indx=parseInt(selEnfer[k]);
         arrarMilagro[indx]=compare(misSintomas,matsintomas[indx]);
+        console.log("Enfermedad "+indx+": "+arrarMilagro[indx]);
     }
 
     
@@ -213,6 +214,7 @@ function compararTodos(){
     var enfermedadScore=[];
     for (var i = 0; i <= matsintomas.length - 1; i++) {
         enfermedadScore[i] = compare(misSintomas,matsintomas[i]);
+        console.log("Enfermedad "+i+": "+enfermedadScore[i]);
     }
     var opcion = indexOfMax(enfermedadScore);
     var max = Math.max(...enfermedadScore);
