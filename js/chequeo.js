@@ -210,7 +210,12 @@ function compararTodos(){
     var opcion = indexOfMax(enfermedadScore);
     var max = Math.max(...enfermedadScore);
       if(max<=3.4){
-        alert("No padeces de ninguna enfermedad");
+            swal({
+              title: "Good job!",
+              text: "You clicked the button!",
+              icon: "success",
+              button: "Aww yiss!",
+            });
       }else if(max>=3.5){
         enfermedadProbable(opcion);
       }
@@ -219,11 +224,11 @@ function compararTodos(){
 
 
 function enfermedadProbable(enfermedad){
-    Swal.fire({
-      title: 'Error!',
-      text: 'Do you want to continue',
-      type: 'error',
-      confirmButtonText: 'Cool'
+    swal({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success",
+      button: "Aww yiss!",
     });
     alert("enfermedad: "+enfermedad);
     alert("Recordar que solo es una pagina de auto checo, favor de ir a una clinica especialicadad.");
