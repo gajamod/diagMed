@@ -84,8 +84,8 @@ function compare(array1,array2){
     //const arr1= [5,5,6];
     //const arr2= [3,7,4];
 
-    console.log(typeof array1);
-    console.log(typeof array2);
+    //console.log(typeof array1);
+    //console.log(typeof array2);
 
     const arrayN=[];
     for (var i = array1.length - 1; i >= 0; i--) {
@@ -101,6 +101,28 @@ function compare(array1,array2){
 
 function add(a, b) {
     return a + b;
+}
+
+function miMax(arr){
+    var mimax=0;
+    for (var k in arr) {
+        if (arr[k]>mimax) {
+            mimax=arr[k];
+        }
+    }
+    return mimax;
+}
+
+function miIndexMax(arr){
+    var mimax2=-1;
+    var maxVal=0;
+    for (var k in arr) {
+        if (arr[k]>maxVal) {
+            maxVal=arr[k];
+            mimax2=k;
+        }
+    }
+    return mimax2;
 }
 
 function indexOfMax(arr) {
@@ -179,20 +201,22 @@ function getSintomas()
 
 function comparacionEspecifica(){
     misSintomas=getSintomas();
-    var arrarMilagro=[];
+    var enfermedadScore=[];
     //misResultados();
     selEnfer=getEnfermedadesSelected();
     for (var k in selEnfer) {
         indx=parseInt(selEnfer[k]);
-        arrarMilagro[indx]=compare(misSintomas,matsintomas[indx]);
-        console.log("Enfermedad "+indx+": "+arrarMilagro[indx]);
+        enfermedadScore[indx]=compare(misSintomas,matsintomas[indx]);
+        console.log("Enfermedad "+indx+": "+enfermedadScore[indx]);
     }
 
     
-    var opcion = indexOfMax(arrarMilagro);
-    var max = Math.max(...arrarMilagro);
+    var opcion = miIndexMax(enfermedadScore);
+    var max = miMax(enfermedadScore);
+    console.log("Index Max: "+opcion);
+    console.log(enfermedadScore);
+    console.log("Max: "+max);
     if(max<=3.4){
-        alert("hola");
         swal({
           title: "Bien!",
           text: "No padeces ninguna enfermedad seleccionada!",
@@ -218,6 +242,7 @@ function compararTodos(){
     }
     var opcion = indexOfMax(enfermedadScore);
     var max = Math.max(...enfermedadScore);
+    console.log("Max: "+max);
       if(max<=3.4){
         swal({
           title: "Bien!",
