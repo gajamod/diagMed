@@ -21,7 +21,7 @@ if ($has_sesion_valida=Session::valid_session()) {
         <a class="nav-link" href="<?php echo BASE_URL ?>">Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo BASE_URL ?>enfermedades/">Enfermedades</a>
+        <a class="nav-link" href="<?php echo BASE_URL ?>enfermedad/">Enfermedades</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo BASE_URL ?>acerca/">Acerca de</a>
