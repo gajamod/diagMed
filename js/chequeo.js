@@ -1,4 +1,4 @@
-var URLBASE='http://localhost/diagnosticoEnfermedades/';
+var URLBASE='http://localhost/diagMed/';
 const enfermedades=[];
 enfermedades[0]=[];
 enfermedades[0]['nombre']="Hirsutismo";
@@ -25,17 +25,13 @@ const matsintomas=[];
  matsintomas[7]=[0.15,1.6,1,0.3,0,0.3,0.2,0.6,0,0,0.1,0.2,0.25,0.15,0.5];
  matsintomas[8]=[0.15,1.6,1,0.15,0.3,0.15,0.1,0.6,0.15,0,0.15,0.2,0.25,0.1,0.3];
  matsintomas[9]=[0.15,0.16,0.2,0,0,0,0,0.05,0,0,0,0,0.25,0,0];
-const valSintomas=[];
 
-
-//prueba
 
 function agregarOpcion(id){
     for (var k in enfermedades) {
          $('#'+id).append('<option value="'+k+'" class="val">'+enfermedades[k]['nombre']+'</option>');
     }
 }
-
 
 function compare(array1,array2){
     //const arr1= [5,5,6];
@@ -72,12 +68,6 @@ function indexOfMax(arr) {
     return maxIndex;
 }
 
-            
-
-function activaTab(tab){
-    $('.nav-link a[href="enfermedades.html' + tab + '"]').tab('show');
-};
-
 
 function getValueSelect(id){
     //alert(id);
@@ -112,7 +102,7 @@ function getEnfermedadesSelected(){
 
 function holis(){
     misSintomas=getSintomas();
-    
+    var arrarMilagro=[];
     //misResultados();
     selEnfer=getEnfermedadesSelected();
     for (var k in selEnfer) {
@@ -122,7 +112,7 @@ function holis(){
         arrarMilagro[indx]=compare(misSintomas,matsintomas[indx]);
     }
 
-    var arrarMilagro=[];
+    
     var opcion = indexOfMax(arrarMilagro);
     var max = Math.max(...arrarMilagro);
     if(max<=3.4){
@@ -217,7 +207,7 @@ function enfermedadProbable(enfermedad){
 
     }
     alert("Recordar que solo es una pagina de auto checo, favor de ir a una clinica especialicadad.");
-    //redirige("enfermedades.html");
+    redirige("enfermedades.html");
 }
 function mostrarEnfermedad(enfermedad,sintomas,tratamiento){
 

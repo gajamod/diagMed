@@ -65,20 +65,32 @@ $sintomas[6]['opciones'][] = array(
      var cant_sintomas=<?php echo count($sintomas); ?>;
  </script>
  <script src="js/chequeo.js"></script>
+ <div class="container">
+    <div class="input-group">
+        <button class="btn btn-info" id="cambiar">Comparacion Especifica</button>
+    </div>
+        
+ </div>
 <div class="container">
     <div class="oneMusic-tab-text" id="sintoms">
-        <h5 class="casos">Enfermedad que se quiere comparar</h5>
-        <div id="dynamic_pago" class="form-inline container-fluid" >
-            <div class="form-group ">
-                <select class="form-control form-control-lg  vp" id="p1" name="enfer[1]" required="required">
-                    <option value="">--Seleccione Enfermedad--</option>
-                </select>
+                <br><br>
+        <div id="especi">
+            <h5 class="casos">Enfermedad que se quiere comparar</h5>
+            <div id="dynamic_pago" class="form-inline container-fluid" >
+                <div class="form-group ">
+                    <select class="form-control form-control-lg  vp" id="p1" name="enfer[1]" required="required">
+                        <option value="">--Seleccione Enfermedad--</option>
+                    </select>
+                </div>
             </div>
+            <div class="input-group">
+                <button type="button" name="add" id="add" class="btn btn-success">Agregar enfermedad</button>
+            </div>          
         </div>
-        <div class="input-group">
-            <button type="button" name="add" id="add" class="btn btn-success">Agregar enfermedad</button>
-        </div>                                 
+                                   
         <br><br>
+
+
         <div class="container">
             <?php foreach ($sintomas as $key => $sintoma): ?>
                 <h5><?php echo $sintoma['nombre']; ?></h5>
@@ -98,6 +110,19 @@ $sintomas[6]['opciones'][] = array(
 </div>
     <script>
 
+function cambiar(){
+    estat=0;
+    var element = document.getElementById("especi");
+    if (estat==0) {
+        estat=1;
+        element.classList.add("hidden");
+    } else {
+        estat=0;
+        element.classList.remove("hidden");
+    }
+    
+    
+}
 
 $(document).ready(function(){
     agregarOpcion('p1');
@@ -108,6 +133,17 @@ $(document).ready(function(){
         agregarOpcion('p'+i);
     });
 
+    $('#cambiar').click(function(){
+        estat=0;
+        if (estat==0) {
+            estat=1;
+            $( "#especi" ).addClass( "invisible" );
+        } else {
+            estat=0;
+            $( "#especi" ).removeClass( "invisible" );
+        }
+        
+    });
     $(document).on('click', '.btn_remove', function(){
         var button_id = $(this).attr("id"); 
         $('#row'+button_id+'').remove();
