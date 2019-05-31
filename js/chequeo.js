@@ -1,4 +1,5 @@
 var URLBASE='http://localhost/diagMed/';
+umbral=1.2;
 const enfermedades=[];
 enfermedades[0]=[];
 enfermedades[0]['nombre']="Candidiasis";
@@ -62,7 +63,7 @@ enfermedades[9]['img']="img/pilonidal-sinus.jpg";
 
 
 const matsintomas=[];
- matsintomas[0]=[0.70,0.01,0.01,0.01,0.40,0.02,0.01,0.16,0.01,0.01,0.00,0.01,0.00,0.50,0.00];
+ matsintomas[0]=[0.70,0.1,0.01,0.01,0.40,0.02,0.01,0.16,0.01,0.01,0.00,0.01,0.00,0.50,0.00];
  matsintomas[1]=[0.13,0.50,0.50,0.50,0.02,0.00,0.00,0.03,0.00,0.00,0.00,0.00,0.00,0.30,0.00];
  matsintomas[2]=[0.03,0.50,0.50,0.30,0.02,0.40,0.00,0.03,0.00,0.00,0.00,0.00,0.00,0.60,0.30];
  matsintomas[3]=[0.03,0.50,0.50,0.30,0.02,0.02,0.90,0.03,0.00,0.00,0.00,0.00,0.00,0.30,0.01];
@@ -216,7 +217,7 @@ function comparacionEspecifica(){
     console.log("Index Max: "+opcion);
     console.log(enfermedadScore);
     console.log("Max: "+max);
-    if(max<=3.4){
+    if(max<umbral){
         swal({
           title: "Bien!",
           text: "No padeces ninguna enfermedad seleccionada!",
@@ -224,10 +225,13 @@ function comparacionEspecifica(){
           button: "Cerrar!",
 
         });
-    }else if(max>=3.5){
+    }else{
         enfermedadProbable(opcion);
         
     }
+}
+function getSum(total, num) {
+  return total + num;
 }
 function compararTodos(){
 
@@ -237,13 +241,14 @@ function compararTodos(){
     misSintomas=getSintomas();
     var enfermedadScore=[];
     for (var i = 0; i <= matsintomas.length - 1; i++) {
+        console.log("Suma ENFER "+i+": "+matsintomas[i].reduce(getSum));
         enfermedadScore[i] = compare(misSintomas,matsintomas[i]);
         console.log("Enfermedad "+i+": "+enfermedadScore[i]);
     }
     var opcion = indexOfMax(enfermedadScore);
     var max = Math.max(...enfermedadScore);
     console.log("Max: "+max);
-      if(max<=3.4){
+      if(max<umbral){
         swal({
           title: "Bien!",
           text: "No padeces ninguna enfermedad en nuestra Base de Datos!",
@@ -251,7 +256,7 @@ function compararTodos(){
           button: "Cerrar!",
 
         });
-      }else if(max>=3.5){
+      }else{
         enfermedadProbable(opcion);
       }
 
@@ -285,9 +290,7 @@ function enfermedadProbable(enfermedad){
 
     
 }
-function mostrarEnfermedad(enfermedad,sintomas,tratamiento){
 
-}
 function redirige(pagina){
     window.location.replace(URLBASE+pagina);
 }
