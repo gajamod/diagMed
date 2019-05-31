@@ -1,4 +1,5 @@
 <h1>Acerca de</h1>
+<h2>Diagnóstico de enfermedades Dermatologicas aplicando Lógica Difusa</h2>
 <p>Proyecto desarrollado para la materia de Inteligencia Artificial 2019-1</p>
 <div class="card">
 	<div class="card-body">

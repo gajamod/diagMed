@@ -26,7 +26,7 @@
         <a class="nav-link" href="<?php echo BASE_URL ?>manual/">Manual de Usuario</a>
       </li>
       <li>
-        <a href="<?php echo BASE_URL ?>"  class="mx-auto btn btn-info">Ir al Test</a>
+        <a href="<?php echo BASE_URL ?>home/test/"  class="mx-auto btn btn-info">Ir al Test</a>
       </li>
         
     </ul>

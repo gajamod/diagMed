@@ -36,8 +36,12 @@ class homeController extends Controller
 
   public function show($params)
   {
+    header("location: ".BASE_URL."acerca");
+     
+  }
 
-    $this->render(__CLASS__,null, $params); 
+  public function test($params){
+    $this->render(__CLASS__,null, $params);
   }
 
 
